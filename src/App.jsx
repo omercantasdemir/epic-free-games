@@ -28,8 +28,13 @@ const EpicGamesList = () => {
       <div className="gamesList">
         {games.map((game) => (
           <div className="freeItem">
-            <img src={game.keyImages[0].url} alt="" />
-            <h3>{game.title}</h3>
+            {game.keyImages.map((image) => {
+              if (image.type === "OfferImageWide")
+                return <img src={image.url} alt="" />;
+            })}
+            <div className="itemDetails">
+              <h3>{game.title}</h3>
+            </div>
           </div>
         ))}
       </div>
