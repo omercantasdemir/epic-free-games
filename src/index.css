@@ -37,7 +37,7 @@ html {
   flex-wrap: wrap;
 }
 .freeItem {
-  width: 45%;
+  max-width: 500px;
   margin: 5px 20px;
   border: 1px solid black;
   border-radius: 15px;
@@ -46,7 +46,14 @@ html {
   flex-direction: row;
   justify-content: center;
 }
+.itemDetails {
+  border-radius: 0px 0px 15px 15px;
+  width: 100%;
+  background-color: antiquewhite;
+  /* opacity: 45%; */
+}
 .freeItem img {
+  border-radius: 15px 15px 0px 0px;
   max-height: 350px;
   max-width: 500px;
 }
