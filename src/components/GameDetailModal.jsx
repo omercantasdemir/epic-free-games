@@ -10,7 +10,7 @@ const GameDetailModal = ({ game, modalVisibility, onClose }) => {
   };
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content">
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <h1>{game?.title}</h1>
         {game.keyImages.map((image) => {
           if (image.type === "OfferImageWide")
