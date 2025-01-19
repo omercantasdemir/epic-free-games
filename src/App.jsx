@@ -66,19 +66,23 @@ const EpicGamesList = () => {
         <h3 style={{ width: "100%", textAlign: "center", fontSize: 30 }}>
           Not free, but check it out i guess.
         </h3>
-        {games.map((game) => (
-          <div className="freeItem">
-            {game.keyImages.map((image) => {
-              if (image.type === "OfferImageWide")
-                return <img src={image.url} alt="" />;
-            })}
-            <div className="itemDetails">
-              <div onClick={() => clickHandler(game)}>
-                <h3>{game.title}</h3>
+        {games.map((game) => {
+          if (game.price.totalPrice.discountPrice !== 0) {
+            return (
+              <div className="freeItem">
+                {game.keyImages.map((image) => {
+                  if (image.type === "OfferImageWide")
+                    return <img src={image.url} alt="" />;
+                })}
+                <div className="itemDetails">
+                  <div onClick={() => clickHandler(game)}>
+                    <h3>{game.title}</h3>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          }
+        })}
       </div>
     </div>
   );
