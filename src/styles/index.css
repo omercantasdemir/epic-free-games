@@ -30,6 +30,10 @@ html {
   flex-direction: row;
   justify-content: center;
 }
+.freeGames h1 {
+  color: red;
+  font-size: 50px;
+}
 .gamesList {
   display: flex;
   justify-content: center;
