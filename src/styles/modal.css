@@ -37,10 +37,14 @@
 .offer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   font-size: 1.75rem;
 }
 .offer p {
+  font-size: 30px;
+  font-family: "Gill Sans", sans-serif;
 }
 .offer button {
   padding: 1rem;
