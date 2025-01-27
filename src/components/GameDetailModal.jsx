@@ -19,15 +19,21 @@ const GameDetailModal = ({ game, modalVisibility, onClose }) => {
 
         <p className="game-description">{game.description}</p>
         <div className="offer">
-          <p> {priceFormatter(game.price.totalPrice.discountPrice)} ₺</p>
-          <button
-            onClick={() => {
-              alert("You're being redirected to Epic Games Store!");
-              window.location.href = `https://store.epicgames.com/en-US/p/${game.catalogNs.mappings[0].pageSlug}`;
-            }}
+          <p>
+            {game.price.totalPrice.discountPrice === 0
+              ? null
+              : `${priceFormatter(game.price.totalPrice.discountPrice)} ₺`}
+          </p>
+          <a
+            href={`https://store.epicgames.com/en-US/p/${game.catalogNs.mappings[0].pageSlug}`}
+            target="blank"
           >
-            Store Page
-          </button>
+            <button>
+              {game.price.totalPrice.discountPrice === 0
+                ? "Free Game!"
+                : "Store Page"}
+            </button>
+          </a>
         </div>
       </div>
     </div>
